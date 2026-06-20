@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Wisher brand colors */
+  --color-wisher-primary: #2d6339;
+  --color-wisher-primary-light: #308041;
+  --color-wisher-primary-dark: #274a34;
+  --color-wisher-primary-accent: #e2ffe8;
+  --color-wisher-accent-light: #f8ffef;
+  --color-wisher-accent: #e9fcce;
+  --color-wisher-accent-dark: #ccf88e;
+  --color-wisher-lemon: #97b067;
+  --color-wisher-brown: #d97d55;
+  --color-wisher-brown-accent: #ffe1d4;
+  --color-wisher-violet: #6366f1;
+  --color-wisher-violet-accent: #e9e9ff;
+  --color-wisher-rose: #ef4444;
+
+  --font-urbanist: var(--font-urbanist);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #111111;
+  --card: #ffffff;
+  --card-foreground: #111111;
+  --popover: #ffffff;
+  --popover-foreground: #111111;
+  --primary: #2d6339;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #e2ffe8;
+  --accent-foreground: #2d6339;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #2d6339;
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: #111111;
+  --foreground: #f9f9f9;
+  --card: #161616;
+  --card-foreground: #f9f9f9;
+  --popover: #1a1a1a;
+  --popover-foreground: #f9f9f9;
+  --primary: #308041;
+  --primary-foreground: #ffffff;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #f9f9f9;
+  --muted: #1a1a1a;
+  --muted-foreground: #a1a1aa;
+  --accent: #274a34;
+  --accent-foreground: #ccf88e;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #308041;
+}
+
+* {
+  border-color: var(--border);
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+  33% { transform: translateY(-20px) rotate(5deg); opacity: 1; }
+  66% { transform: translateY(-10px) rotate(-5deg); opacity: 0.85; }
+}
+
+.confetti-dot {
+  animation: float 6s ease-in-out infinite;
+}

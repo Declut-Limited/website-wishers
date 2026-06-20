@@ -20,6 +20,7 @@ const eslintConfig = [
       "react-hooks/exhaustive-deps": "off",
       "@typescript-eslint/no-unused-expressions": "off",
       "@typescript-eslint/ban-ts-comment": "off",
+      "@next/next/no-img-element": "off",
     },
   },
 ];
