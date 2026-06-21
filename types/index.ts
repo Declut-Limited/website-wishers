@@ -12,6 +12,8 @@ export interface WishlistType {
   totalAmountReceived: number;
   isCompleted: boolean;
   currentboostExpiresAt?: string;
+  previousBoostingCount?: number;
+  lastBoostedAt?: string;
   contributorsImages?: string[];
   visitCount?: number;
   created: string;

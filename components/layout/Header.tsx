@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { Menu, Sun, Moon, Monitor } from "lucide-react";
+import { Menu, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -11,18 +11,11 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const navLinks = [
   { label: "Home", href: "#hero" },
   { label: "How it Works", href: "#how-it-works" },
   { label: "Features", href: "#features" },
-  { label: "Featured", href: "#featured" },
 ];
 
 const ANDROID_URL =
@@ -30,30 +23,23 @@ const ANDROID_URL =
   "https://play.google.com/store/apps/details?id=com.wishers.app";
 
 function ThemeToggle() {
-  const { setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" aria-label="Toggle theme">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          <Sun className="mr-2 h-4 w-4" />
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          <Moon className="mr-2 h-4 w-4" />
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          <Monitor className="mr-2 h-4 w-4" />
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <Button
+      variant="ghost"
+      size="icon"
+      aria-label="Toggle theme"
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+    >
+      {mounted && resolvedTheme === "dark" ? (
+        <Sun className="h-[1.2rem] w-[1.2rem]" />
+      ) : (
+        <Moon className="h-[1.2rem] w-[1.2rem]" />
+      )}
+    </Button>
   );
 }
 
@@ -95,7 +81,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
+              className="text-md font-medium text-foreground/70 hover:text-foreground transition-colors"
             >
               {link.label}
             </a>
@@ -105,14 +91,14 @@ export default function Header() {
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
-          <Button
+          {/* <Button
             asChild
             className="bg-wisher-primary hover:bg-wisher-primary-light text-white dark:bg-wisher-accent-dark dark:hover:bg-wisher-accent dark:text-wisher-primary-dark font-semibold border border-transparent dark:border-wisher-accent-dark transition-all"
           >
             <a href={ANDROID_URL} target="_blank" rel="noopener noreferrer">
               Create My Wishlist +
             </a>
-          </Button>
+          </Button> */}
         </div>
 
         {/* Mobile Nav */}
@@ -136,14 +122,14 @@ export default function Header() {
                     </a>
                   </SheetClose>
                 ))}
-                <a
+                {/* <a
                   href={ANDROID_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 inline-flex items-center justify-center rounded-md bg-wisher-primary text-white dark:bg-wisher-accent-dark dark:text-wisher-primary-dark font-semibold py-3 px-6 hover:bg-wisher-primary-light dark:hover:bg-wisher-accent transition-colors"
                 >
                   Create My Wishlist +
-                </a>
+                </a> */}
               </nav>
             </SheetContent>
           </Sheet>

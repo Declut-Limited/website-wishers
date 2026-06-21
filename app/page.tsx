@@ -24,11 +24,11 @@ export default async function Home() {
       <Header />
       <main>
         <HeroSection />
+        {/* {wishlists.length > 0 && ( */}
+          <FeaturedWishlistsSection wishlists={wishlists} />
+        {/* )} */}
         <HowItWorksSection />
         <FeaturesSection />
-        {wishlists.length > 0 && (
-          <FeaturedWishlistsSection wishlists={wishlists} />
-        )}
         <TestimonialsSection />
         <DownloadSection />
       </main>

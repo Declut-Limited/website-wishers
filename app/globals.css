@@ -98,6 +98,7 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
+  overflow-x: hidden;
 }
 
 html {
@@ -113,3 +114,82 @@ html {
 .confetti-dot {
   animation: float 6s ease-in-out infinite;
 }
+
+
+.global--overlay {
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 100;
+
+	background-color: rgba(0, 0, 0, 0.15);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+	cursor: pointer;
+}
+
+.spinner_container {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+
+	display: flex;
+	flex-direction: column;
+	gap: .48rem;
+	align-items: center;
+	justify-content: center;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+
+	z-index: 200;
+	background-color: rgba(0, 0, 0, 0.1);
+	-webkit-backdrop-filter: blur(2px);
+	backdrop-filter: blur(2px);
+	transition: all 0.2s;
+}
+
+
+
+/* ===================================== */
+/* ERROR COMPONENT */
+/* ===================================== */
+
+.error_container {
+    max-width: 45rem;
+    margin: 10rem auto;
+    padding: 0 2.8rem;
+    height: 70vh;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4rem;
+}
+
+.error_heading {
+    font-size: 6rem;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.error_heading svg {
+    font-size: 4.8rem;
+}
+
+.error_text {
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+

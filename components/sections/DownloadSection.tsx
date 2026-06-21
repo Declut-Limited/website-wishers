@@ -5,28 +5,44 @@ const IOS_URL =
   process.env.NEXT_PUBLIC_IOS_APP_URL ||
   "https://apps.apple.com/app/wisher/id[APP_ID]";
 
+const stats = [
+  { value: "Free", label: "to download" },
+  { value: "Paystack", label: "secured payments" },
+  { value: "4.8★", label: "app rating" },
+];
+
 export default function DownloadSection() {
   return (
-    <section className="py-20 sm:py-28 bg-wisher-primary dark:bg-[#111111] relative overflow-hidden">
-      {/* Accent glow blob */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-75 rounded-full bg-wisher-accent-dark/10 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-20 -right-20 w-96 h-96 rounded-full bg-wisher-accent-dark/5 blur-3xl pointer-events-none" />
+    <section className="py-20 sm:py-28 bg-wisher-primary dark:bg-[#0d1a10] relative overflow-hidden">
+      {/* Background texture dots */}
+      <div className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: "radial-gradient(circle, #ccf88e 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
+      />
+      {/* Glow blobs */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-75 rounded-full bg-wisher-accent-dark/15 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-wisher-accent-dark/10 blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Eyebrow label in accent-dark */}
+
+        {/* Eyebrow */}
         <span className="inline-block bg-wisher-accent-dark text-wisher-primary-dark text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
           Free to download
         </span>
 
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
-          Ready to Start Receiving?
+          Your Wishlist Is One Download Away
         </h2>
-        <p className="text-lg text-white/70 mb-10">
-          Download Wisher for free and create your first wishlist in minutes.
+        <p className="text-lg text-white/65 mb-10 max-w-xl mx-auto">
+          Join thousands of Nigerians already using Wisher to celebrate
+          birthdays, weddings, and every moment worth gifting.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          {/* Android — #ccf88e (accent-dark) with dark green text: the signature CTA */}
+        {/* Download buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          {/* Android — lime CTA */}
           <a
             href={ANDROID_URL}
             target="_blank"
@@ -42,12 +58,12 @@ export default function DownloadSection() {
             </div>
           </a>
 
-          {/* iOS — outlined ghost: white border / white text on dark bg */}
+          {/* iOS — ghost */}
           <a
             href={IOS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-transparent border border-white/40 text-white hover:bg-white/10 hover:border-white/60 font-bold px-7 py-4 rounded-xl transition-all duration-200 min-w-55 justify-center"
+            className="inline-flex items-center gap-3 bg-transparent border border-white/30 text-white hover:bg-white/10 hover:border-white/50 font-bold px-7 py-4 rounded-xl transition-all duration-200 min-w-55 justify-center"
           >
             <svg viewBox="0 0 24 24" className="w-6 h-6 fill-white shrink-0">
               <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
@@ -58,6 +74,19 @@ export default function DownloadSection() {
             </div>
           </a>
         </div>
+
+        {/* Stats strip */}
+        <div className="flex items-center justify-center gap-8 sm:gap-12">
+          {stats.map((s, i) => (
+            <div key={i} className="text-center">
+              <div className="text-lg font-extrabold text-wisher-accent-dark leading-none">
+                {s.value}
+              </div>
+              <div className="text-xs text-white/50 mt-0.5">{s.label}</div>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );
