@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { LuArrowLeft } from "react-icons/lu";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -23,7 +23,7 @@ export default function LegalLayout({
             href="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <LuArrowLeft className="w-4 h-4" />
             Back to Home
           </Link>
 

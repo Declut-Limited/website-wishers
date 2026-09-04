@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { Menu, Sun, Moon } from "lucide-react";
+import { LuMenu, LuSun, LuMoon } from "react-icons/lu";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -35,9 +35,9 @@ function ThemeToggle() {
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       {mounted && resolvedTheme === "dark" ? (
-        <Sun className="h-[1.2rem] w-[1.2rem]" />
+        <LuSun className="h-[1.2rem] w-[1.2rem]" />
       ) : (
-        <Moon className="h-[1.2rem] w-[1.2rem]" />
+        <LuMoon className="h-[1.2rem] w-[1.2rem]" />
       )}
     </Button>
   );
@@ -107,7 +107,7 @@ export default function Header() {
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" aria-label="Open menu">
-                <Menu className="h-5 w-5" />
+                <LuMenu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-72 pt-12">

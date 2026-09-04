@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { LuArrowRight } from "react-icons/lu";
 import { WishlistType } from "@/types";
 import WishlistCard from "@/components/wishlist/WishlistCard";
 
@@ -40,7 +40,7 @@ export default function FeaturedWishlistsSection({
             className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-wisher-primary dark:text-wisher-accent-dark hover:underline underline-offset-4 shrink-0 transition-colors"
           >
             See all
-            <ArrowRight className="w-3.5 h-3.5" />
+            <LuArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
@@ -63,7 +63,7 @@ export default function FeaturedWishlistsSection({
             className="inline-flex items-center gap-2 text-sm font-semibold text-wisher-primary dark:text-wisher-accent-dark hover:underline underline-offset-4 transition-colors"
           >
             See all featured wishlists
-            <ArrowRight className="w-4 h-4" />
+            <LuArrowRight className="w-4 h-4" />
           </Link>
         </div>
 

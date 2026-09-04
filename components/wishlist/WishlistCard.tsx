@@ -2,7 +2,7 @@ import { WishlistType } from "@/types";
 import { optimizeCloudinaryUrl } from "@/lib/wishlists";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, Gift } from "lucide-react";
+import { LuUsers, LuGift } from "react-icons/lu";
 
 interface WishlistCardProps {
   item: WishlistType;
@@ -69,12 +69,12 @@ export default function WishlistCard({ item }: WishlistCardProps) {
         {/* Stats row */}
         <div className="flex items-center gap-4 text-xs text-muted-foreground">
           <span className="flex items-center gap-1">
-            <Users className="w-3.5 h-3.5" />
+            <LuUsers className="w-3.5 h-3.5" />
             {item.totalContributors} contributor
             {item.totalContributors !== 1 ? "s" : ""}
           </span>
           <span className="flex items-center gap-1">
-            <Gift className="w-3.5 h-3.5" />
+            <LuGift className="w-3.5 h-3.5" />
             {item.totalWishItems} item{item.totalWishItems !== 1 ? "s" : ""}
           </span>
         </div>

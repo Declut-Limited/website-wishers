@@ -1,39 +1,39 @@
-import { Gift, Link2, Wallet, Rocket, Users, Shield } from "lucide-react";
+import { LuGift, LuLink2, LuWallet, LuRocket, LuUsers, LuShield } from "react-icons/lu";
 import { Card, CardContent } from "@/components/ui/card";
 
 const features = [
   {
-    icon: Gift,
+    icon: LuGift,
     title: "Wishlist Creation",
     description:
       "Create multiple wishlists with custom items, cover images, and goal amounts for any occasion.",
   },
   {
-    icon: Link2,
+    icon: LuLink2,
     title: "Shareable Links",
     description:
       "Every wishlist gets a unique pay.wishers.app link — share anywhere in seconds.",
   },
   {
-    icon: Wallet,
+    icon: LuWallet,
     title: "In-App Wallet",
     description:
       "All contributions land in your Wisher wallet. Withdraw anytime to your Nigerian bank account.",
   },
   {
-    icon: Rocket,
+    icon: LuRocket,
     title: "Boost Your Wishlist",
     description:
       "Pay to feature your wishlist publicly and reach more potential givers across Nigeria.",
   },
   {
-    icon: Users,
+    icon: LuUsers,
     title: "Referral Earnings",
     description:
       "Earn 1% of every withdrawal your referred users make — a passive income stream built in.",
   },
   {
-    icon: Shield,
+    icon: LuShield,
     title: "Secure Payments",
     description:
       "All payments processed by Paystack — Nigeria's most trusted payment gateway.",

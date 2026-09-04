@@ -1,23 +1,23 @@
-import { PlusCircle, Share2, Wallet } from "lucide-react";
+import { LuCirclePlus, LuShare2, LuWallet } from "react-icons/lu";
 
 const steps = [
   {
     number: "01",
-    icon: PlusCircle,
+    icon: LuCirclePlus,
     title: "Create",
     description:
       "Sign up and create your wishlist with items, images, and goal amounts in minutes.",
   },
   {
     number: "02",
-    icon: Share2,
+    icon: LuShare2,
     title: "Share",
     description:
       "Share your unique link with friends and family via WhatsApp, social media, or anywhere.",
   },
   {
     number: "03",
-    icon: Wallet,
+    icon: LuWallet,
     title: "Receive",
     description:
       "Friends contribute via Paystack. Funds go straight to your Wisher wallet, ready to withdraw.",

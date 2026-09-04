@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Inbox } from "lucide-react";
+import { LuArrowLeft, LuInbox } from "react-icons/lu";
 import { getFeaturedWishlistsPaginated } from "@/lib/wishlists";
 import { WishlistType } from "@/types";
 import LoadMoreClient from "./LoadMoreClient";
@@ -32,7 +32,7 @@ export default async function FeaturedPage() {
             href="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <LuArrowLeft className="w-4 h-4" />
             Back to Home
           </Link>
 
@@ -55,7 +55,7 @@ export default async function FeaturedPage() {
           ) : (
             <div className="flex flex-col items-center justify-center py-24 gap-4 text-center">
               <div className="w-16 h-16 rounded-2xl bg-muted flex items-center justify-center">
-                <Inbox className="w-8 h-8 text-muted-foreground" />
+                <LuInbox className="w-8 h-8 text-muted-foreground" />
               </div>
               <h3 className="text-xl font-semibold text-foreground">
                 No featured wishlists right now

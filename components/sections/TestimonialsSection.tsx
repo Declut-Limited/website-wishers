@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Quote } from "lucide-react";
+import { LuQuote } from "react-icons/lu";
 
 const testimonials = [
   {
@@ -49,7 +49,7 @@ export default function TestimonialsSection() {
               className="bg-background border border-border shadow-sm"
             >
               <CardContent className="p-6 flex flex-col gap-4">
-                <Quote className="w-8 h-8 text-wisher-primary/30 dark:text-wisher-accent-dark/30" />
+                <LuQuote className="w-8 h-8 text-wisher-primary/30 dark:text-wisher-accent-dark/30" />
                 <p className="text-foreground/80 leading-relaxed text-sm flex-1">
                   &ldquo;{t.text}&rdquo;
                 </p>
