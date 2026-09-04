@@ -42,6 +42,10 @@
   --color-wisher-violet-accent: #e9e9ff;
   --color-wisher-rose: #ef4444;
 
+  /* Redesign palette (2026-09, Figma handoff) — additive, legacy tokens above stay live until their sections are rebuilt */
+  --color-wisher-ink: #0c1d14;
+  --color-wisher-lime: #c9fa73;
+
   --font-urbanist: var(--font-urbanist);
   --font-fraunces: var(--font-fraunces);
 }

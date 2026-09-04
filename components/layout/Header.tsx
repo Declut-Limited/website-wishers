@@ -1,9 +1,5 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useTheme } from "next-themes";
-import { LuMenu, LuSun, LuMoon } from "react-icons/lu";
+import { LuMenu } from "react-icons/lu";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -13,123 +9,96 @@ import {
 } from "@/components/ui/sheet";
 
 const navLinks = [
-  { label: "Home", href: "#hero" },
-  { label: "How it Works", href: "#how-it-works" },
+  { label: "How it works", href: "#how-it-works" },
+  { label: "Gift moments", href: "#gift-moments" },
   { label: "Features", href: "#features" },
+  { label: "Safety", href: "#safety" },
 ];
 
 const ANDROID_URL =
   process.env.NEXT_PUBLIC_ANDROID_APP_URL ||
   "https://play.google.com/store/apps/details?id=com.wishers.app";
 
-function ThemeToggle() {
-  const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
-  return (
-    <Button
-      variant="ghost"
-      size="icon"
-      aria-label="Toggle theme"
-      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-    >
-      {mounted && resolvedTheme === "dark" ? (
-        <LuSun className="h-[1.2rem] w-[1.2rem]" />
-      ) : (
-        <LuMoon className="h-[1.2rem] w-[1.2rem]" />
-      )}
-    </Button>
-  );
-}
-
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "backdrop-blur-md bg-background/80 border-b border-border shadow-sm"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-wisher-ink">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center">
           <img
             src="/favicon.svg"
             alt="Wisher"
-            width={32}
-            height={32}
-            className="w-8 h-8 rounded-lg"
+            width={36}
+            height={36}
+            className="w-9 h-9 rounded-lg"
           />
-          <span className="text-xl font-bold text-wisher-primary dark:text-white tracking-tight">
-            Wisher
-          </span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
+        <nav className="hidden md:flex items-center gap-9">
+          {navLinks.map((link, i) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-md font-medium text-foreground/70 hover:text-foreground transition-colors"
+              className={
+                i === 0
+                  ? "text-[15px] font-semibold text-white transition-colors"
+                  : "text-[15px] font-normal text-white/60 hover:text-white transition-colors"
+              }
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        {/* Desktop Actions */}
-        <div className="hidden md:flex items-center gap-3">
-          <ThemeToggle />
-          {/* <Button
+        {/* Desktop CTA */}
+        <div className="hidden md:flex items-center">
+          <Button
             asChild
-            className="bg-wisher-primary hover:bg-wisher-primary-light text-white dark:bg-wisher-accent-dark dark:hover:bg-wisher-accent dark:text-wisher-primary-dark font-semibold border border-transparent dark:border-wisher-accent-dark transition-all"
+            className="bg-wisher-lime hover:bg-wisher-lime/90 text-wisher-ink font-semibold rounded-full h-11 px-6"
           >
             <a href={ANDROID_URL} target="_blank" rel="noopener noreferrer">
-              Create My Wishlist +
+              Join Waitlist
             </a>
-          </Button> */}
+          </Button>
         </div>
 
         {/* Mobile Nav */}
         <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle />
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Open menu">
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Open menu"
+                className="text-white hover:bg-white/10 hover:text-white"
+              >
                 <LuMenu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-72 pt-12">
+            <SheetContent
+              side="right"
+              className="w-72 pt-12 bg-wisher-ink border-white/10"
+            >
               <nav className="flex flex-col gap-4 mt-4">
                 {navLinks.map((link) => (
                   <SheetClose asChild key={link.href}>
                     <a
                       href={link.href}
-                      className="text-base font-medium text-foreground/80 hover:text-foreground py-2 border-b border-border/50 transition-colors"
+                      className="text-base font-medium text-white/80 hover:text-white py-2 border-b border-white/10 transition-colors"
                     >
                       {link.label}
                     </a>
                   </SheetClose>
                 ))}
-                {/* <a
+                <a
                   href={ANDROID_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center justify-center rounded-md bg-wisher-primary text-white dark:bg-wisher-accent-dark dark:text-wisher-primary-dark font-semibold py-3 px-6 hover:bg-wisher-primary-light dark:hover:bg-wisher-accent transition-colors"
+                  className="mt-4 inline-flex items-center justify-center rounded-full bg-wisher-lime text-wisher-ink font-semibold py-3 px-6 hover:bg-wisher-lime/90 transition-colors"
                 >
-                  Create My Wishlist +
-                </a> */}
+                  Join Waitlist
+                </a>
               </nav>
             </SheetContent>
           </Sheet>
