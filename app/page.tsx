@@ -3,6 +3,7 @@ import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
+import GiftMomentsSection from "@/components/sections/GiftMomentsSection";
 import FeaturedWishlistsSection from "@/components/sections/FeaturedWishlistsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import DownloadSection from "@/components/sections/DownloadSection";
@@ -29,6 +30,7 @@ export default async function Home() {
         {/* )} */}
         <HowItWorksSection />
         <FeaturesSection />
+        <GiftMomentsSection />
         <TestimonialsSection />
         <DownloadSection />
       </main>
