@@ -80,7 +80,7 @@ export default function HeroSection() {
                 badges + "Almost there" bubble are baked into this single PNG) ── */}
           <div className="flex-1 flex justify-center lg:justify-end">
             <img
-              src="/hero-assets.png"
+              src="/assets/hero-assets.png"
               alt="Wisher wishlist card for a MacBook wish, 70% funded with 12 givers"
               width={2568}
               height={1420}
