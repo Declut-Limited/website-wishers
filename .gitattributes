@@ -1,0 +1,2 @@
+# Keep line endings as LF everywhere (some files had been switched to Windows CRLF)
+* text=auto eol=lf
