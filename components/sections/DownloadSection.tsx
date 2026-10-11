@@ -1,3 +1,7 @@
+import FadeIn from "@/components/motion/FadeIn";
+
+// "Make it easier to gift you well.": closing download band on lime (#C5F961),
+// using the same black store pills as the hero.
 const ANDROID_URL =
   process.env.NEXT_PUBLIC_ANDROID_APP_URL ||
   "https://play.google.com/store/apps/details?id=com.wishers.app";
@@ -5,88 +9,54 @@ const IOS_URL =
   process.env.NEXT_PUBLIC_IOS_APP_URL ||
   "https://apps.apple.com/app/wisher/id[APP_ID]";
 
-const stats = [
-  { value: "Free", label: "to download" },
-  { value: "Paystack", label: "secured payments" },
-  { value: "4.8★", label: "app rating" },
-];
-
 export default function DownloadSection() {
   return (
-    <section className="py-20 sm:py-28 bg-wisher-primary dark:bg-[#0d1a10] relative overflow-hidden">
-      {/* Background texture dots */}
-      <div className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: "radial-gradient(circle, #ccf88e 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-        }}
-      />
-      {/* Glow blobs */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-75 rounded-full bg-wisher-accent-dark/15 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-wisher-accent-dark/10 blur-3xl pointer-events-none" />
+    <section id="download" aria-label="Your next celebration starts here" className="py-20 sm:py-28" style={{ backgroundColor: "#C5F961" }}>
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[7fr_5fr] lg:gap-16 lg:px-8">
+        <FadeIn>
+          <p className="mb-5 text-xs sm:text-sm font-bold uppercase tracking-[0.1em] text-wisher-primary">
+            Your next celebration starts here
+          </p>
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-wisher-forest">
+            Make it easier
+            <br />
+            to gift you well.
+          </h2>
+        </FadeIn>
 
-      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <FadeIn delay={0.1}>
+          <p className="max-w-md text-base sm:text-lg font-medium leading-relaxed text-wisher-ink">
+            Birthdays, weddings, graduations, baby showers, and everyday dreams, all in one beautiful wishlist.
+          </p>
 
-        {/* Eyebrow */}
-        <span className="inline-block bg-wisher-accent-dark text-wisher-primary-dark text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
-          Free to download
-        </span>
+          <div className="mt-7 flex flex-wrap items-center gap-4">
+            <a
+              href={ANDROID_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 rounded-full bg-black py-2.5 pl-5 pr-6 text-white transition-[background-color,translate] duration-200 hover:-translate-y-0.5 hover:bg-black/80"
+            >
+              <img src="/assets/google-play.svg" alt="" width={24} height={26} className="h-6 w-auto shrink-0" />
+              <span className="text-left">
+                <span className="block text-[10px] font-medium uppercase leading-none tracking-wide">Get it on</span>
+                <span className="block text-lg font-semibold leading-tight">Google Play</span>
+              </span>
+            </a>
 
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
-          Your Wishlist Is One Download Away
-        </h2>
-        <p className="text-lg text-white/65 mb-10 max-w-xl mx-auto">
-          Join thousands of Nigerians already using Wisher to celebrate
-          birthdays, weddings, and every moment worth gifting.
-        </p>
-
-        {/* Download buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          {/* Android — lime CTA */}
-          <a
-            href={ANDROID_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-wisher-accent-dark hover:bg-wisher-accent text-wisher-primary-dark font-bold px-7 py-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl min-w-55 justify-center border border-wisher-accent-dark hover:border-wisher-accent"
-          >
-            <svg viewBox="0 0 24 24" className="w-6 h-6 fill-wisher-primary-dark shrink-0">
-              <path d="M3.18 23.76c.3.17.64.24.98.21l12.06-6.97-2.54-2.54L3.18 23.76zm-1.6-17.84A2 2 0 0 0 1 7.25v9.5a2 2 0 0 0 .58 1.33l.07.07L8.73 11l-7.15-5.08zm19.49 5.46-2.66-1.54-2.86 2.86 2.86 2.86 2.67-1.54a2 2 0 0 0 0-3.64zm-16.3-6.8L16.83 7.5 14.3 10.04 2.75 5.58z" />
-            </svg>
-            <div className="text-left">
-              <div className="text-xs font-normal opacity-60 leading-none">Download for</div>
-              <div className="text-base leading-tight">Android</div>
-            </div>
-          </a>
-
-          {/* iOS — ghost */}
-          <a
-            href={IOS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-transparent border border-white/30 text-white hover:bg-white/10 hover:border-white/50 font-bold px-7 py-4 rounded-xl transition-all duration-200 min-w-55 justify-center"
-          >
-            <svg viewBox="0 0 24 24" className="w-6 h-6 fill-white shrink-0">
-              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-            </svg>
-            <div className="text-left">
-              <div className="text-xs font-normal opacity-70 leading-none">Download for</div>
-              <div className="text-base leading-tight">iOS</div>
-            </div>
-          </a>
-        </div>
-
-        {/* Stats strip */}
-        <div className="flex items-center justify-center gap-8 sm:gap-12">
-          {stats.map((s, i) => (
-            <div key={i} className="text-center">
-              <div className="text-lg font-extrabold text-wisher-accent-dark leading-none">
-                {s.value}
-              </div>
-              <div className="text-xs text-white/50 mt-0.5">{s.label}</div>
-            </div>
-          ))}
-        </div>
-
+            <a
+              href={IOS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 rounded-full bg-black py-2.5 pl-5 pr-6 text-white transition-[background-color,translate] duration-200 hover:-translate-y-0.5 hover:bg-black/80"
+            >
+              <img src="/assets/apple-store.svg" alt="" width={18} height={22} className="h-6 w-auto shrink-0" />
+              <span className="text-left">
+                <span className="block text-[10px] font-medium leading-none tracking-wide">Download on the</span>
+                <span className="block text-lg font-semibold leading-tight">App Store</span>
+              </span>
+            </a>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

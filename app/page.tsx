@@ -1,39 +1,40 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
+import TrustMarquee from "@/components/sections/TrustMarquee";
+import WishingNowSection from "@/components/sections/WishingNowSection";
+import ShowedUpSection from "@/components/sections/ShowedUpSection";
 import HowItWorksSection from "@/components/sections/HowItWorksSection";
-import FeaturesSection from "@/components/sections/FeaturesSection";
-import GiftMomentsSection from "@/components/sections/GiftMomentsSection";
-import FeatureHighlightsSection from "@/components/sections/FeatureHighlightsSection";
-import FeaturedWishlistsSection from "@/components/sections/FeaturedWishlistsSection";
+import SharingStorySection from "@/components/sections/SharingStorySection";
+import MomentsGallerySection from "@/components/sections/MomentsGallerySection";
+import StorySpreadSection from "@/components/sections/StorySpreadSection";
+// Featured wishlists are parked until boosting exists on the Wishers API (Firebase removed 2026-10-12).
+// import FeaturedWishlistsSection from "@/components/sections/FeaturedWishlistsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import SafetySection from "@/components/sections/SafetySection";
+import FaqSection from "@/components/sections/FaqSection";
+import PeopleReadySection from "@/components/sections/PeopleReadySection";
 import DownloadSection from "@/components/sections/DownloadSection";
-import { getFeaturedWishlists } from "@/lib/wishlists";
-import { WishlistType } from "@/types";
 
-export const revalidate = 300;
-
-export default async function Home() {
-  let wishlists: WishlistType[] = [];
-  try {
-    wishlists = await getFeaturedWishlists(6);
-  } catch {
-    // Firebase not configured; render page without featured section
-  }
-
+export default function Home() {
   return (
     <>
       <Header />
       <main>
         <HeroSection />
-        {/* {wishlists.length > 0 && ( */}
-          <FeaturedWishlistsSection wishlists={wishlists} />
-        {/* )} */}
+        <TrustMarquee />
+        <WishingNowSection />
+        <ShowedUpSection />
+        {/* Featured wishlists: parked until boosting is on the API */}
+        {/* <FeaturedWishlistsSection wishlists={wishlists} /> */}
         <HowItWorksSection />
-        <FeaturesSection />
-        <GiftMomentsSection />
-        <FeatureHighlightsSection />
+        <SharingStorySection />
+        <MomentsGallerySection />
+        <StorySpreadSection />
         <TestimonialsSection />
+        <SafetySection />
+        <FaqSection />
+        <PeopleReadySection />
         <DownloadSection />
       </main>
       <Footer />

@@ -1,27 +1,11 @@
 import Link from "next/link";
 import { LuArrowLeft, LuInbox } from "react-icons/lu";
-import { getFeaturedWishlistsPaginated } from "@/lib/wishlists";
-import { WishlistType } from "@/types";
-import LoadMoreClient from "./LoadMoreClient";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-export const revalidate = 300;
-
-export default async function FeaturedPage() {
-  let initialItems: WishlistType[] = [];
-  let initialLastDocId: string | null = null;
-  let initialHasMore = false;
-
-  try {
-    const result = await getFeaturedWishlistsPaginated(12);
-    initialItems = result.items;
-    initialLastDocId = result.lastDoc?.id ?? null;
-    initialHasMore = result.hasMore;
-  } catch {
-    // Firebase not configured; show empty state
-  }
-
+// Featured wishlists are parked until boosting exists on the Wishers API (Firebase removed
+// 2026-10-12), so this page always shows its empty state for now.
+export default function FeaturedPage() {
   return (
     <>
       <Header />
@@ -46,13 +30,6 @@ export default async function FeaturedPage() {
             </p>
           </div>
 
-          {initialItems.length > 0 ? (
-            <LoadMoreClient
-              initialItems={initialItems}
-              initialLastDocId={initialLastDocId}
-              initialHasMore={initialHasMore}
-            />
-          ) : (
             <div className="flex flex-col items-center justify-center py-24 gap-4 text-center">
               <div className="w-16 h-16 rounded-2xl bg-muted flex items-center justify-center">
                 <LuInbox className="w-8 h-8 text-muted-foreground" />
@@ -71,7 +48,6 @@ export default async function FeaturedPage() {
                 ← Back to Home
               </Link>
             </div>
-          )}
         </div>
       </main>
       <Footer />

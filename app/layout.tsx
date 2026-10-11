@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Urbanist, Fraunces } from "next/font/google";
+import { Urbanist, Fraunces, Caveat } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
@@ -12,6 +12,14 @@ const urbanist = Urbanist({
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
+  display: "swap",
+});
+
+// Handwritten accent (Hero's "A little hint, A lot of love" note)
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-caveat",
   display: "swap",
 });
 
@@ -48,7 +56,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${urbanist.variable} ${fraunces.variable}`}
+      className={`${urbanist.variable} ${fraunces.variable} ${caveat.variable}`}
     >
       <body className="font-[family-name:var(--font-urbanist)] antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
