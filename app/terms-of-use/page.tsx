@@ -31,7 +31,7 @@ export default function TermsOfUsePage() {
         <li>You must provide accurate and complete information when registering.</li>
         <li>You may not share your account with others or create multiple accounts.</li>
         <li>You must notify us immediately at{" "}
-          <a href="mailto:support@wishers.app">support@wishers.app</a> if you
+          <a href="mailto:support@wishers.com.ng">support@wishers.com.ng</a> if you
           suspect unauthorised access to your account.
         </li>
       </ul>
@@ -145,9 +145,9 @@ export default function TermsOfUsePage() {
       <p>Questions about these Terms? Reach us at:</p>
       <ul>
         <li>
-          Email: <a href="mailto:support@wishers.app">support@wishers.app</a>
+          Email: <a href="mailto:support@wishers.com.ng">support@wishers.com.ng</a>
         </li>
-        <li>Website: wishers.app</li>
+        <li>Website: wishers.com.ng</li>
       </ul>
     </LegalLayout>
   );

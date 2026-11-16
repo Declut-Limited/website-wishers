@@ -2,12 +2,10 @@ import Image from "next/image";
 import { LuArrowUpRight } from "react-icons/lu";
 import FadeIn from "@/components/motion/FadeIn";
 import { StaggerGroup, StaggerItem } from "@/components/motion/Stagger";
+import { WEB_APP_LOGIN_URL } from "@/lib/links";
 
 // "Some wishes deserve to be said out loud.": closing call to action over a celebration photo,
 // tinted deep green (#0B2016), heaviest on the left where the copy sits.
-const ANDROID_URL =
-  process.env.NEXT_PUBLIC_ANDROID_APP_URL ||
-  "https://play.google.com/store/apps/details?id=com.wishers.app";
 
 export default function PeopleReadySection() {
   return (
@@ -54,7 +52,7 @@ export default function PeopleReadySection() {
         </StaggerItem>
         <StaggerItem>
           <a
-            href={ANDROID_URL}
+            href={WEB_APP_LOGIN_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="group mt-7 inline-flex h-14 items-center gap-8 rounded-full bg-wisher-lime px-7 text-base font-extrabold text-wisher-ink transition-colors hover:bg-wisher-lime/90"

@@ -1,13 +1,8 @@
 import FadeIn from "@/components/motion/FadeIn";
+import StoreButton from "@/components/elements/StoreButton";
 
 // "Make it easier to gift you well.": closing download band on lime (#C5F961),
 // using the same black store pills as the hero.
-const ANDROID_URL =
-  process.env.NEXT_PUBLIC_ANDROID_APP_URL ||
-  "https://play.google.com/store/apps/details?id=com.wishers.app";
-const IOS_URL =
-  process.env.NEXT_PUBLIC_IOS_APP_URL ||
-  "https://apps.apple.com/app/wisher/id[APP_ID]";
 
 export default function DownloadSection() {
   return (
@@ -30,31 +25,14 @@ export default function DownloadSection() {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-4">
-            <a
-              href={ANDROID_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 rounded-full bg-black py-2.5 pl-5 pr-6 text-white transition-[background-color,translate] duration-200 hover:-translate-y-0.5 hover:bg-black/80"
-            >
-              <img src="/assets/google-play.svg" alt="" width={24} height={26} className="h-6 w-auto shrink-0" />
-              <span className="text-left">
-                <span className="block text-[10px] font-medium uppercase leading-none tracking-wide">Get it on</span>
-                <span className="block text-lg font-semibold leading-tight">Google Play</span>
-              </span>
-            </a>
-
-            <a
-              href={IOS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 rounded-full bg-black py-2.5 pl-5 pr-6 text-white transition-[background-color,translate] duration-200 hover:-translate-y-0.5 hover:bg-black/80"
-            >
-              <img src="/assets/apple-store.svg" alt="" width={18} height={22} className="h-6 w-auto shrink-0" />
-              <span className="text-left">
-                <span className="block text-[10px] font-medium leading-none tracking-wide">Download on the</span>
-                <span className="block text-lg font-semibold leading-tight">App Store</span>
-              </span>
-            </a>
+            <StoreButton
+              store="android"
+              className="inline-flex cursor-pointer items-center gap-3 rounded-full bg-black py-2.5 pl-5 pr-6 text-white transition-[background-color,translate] duration-200 hover:-translate-y-0.5 hover:bg-black/80"
+            />
+            <StoreButton
+              store="ios"
+              className="inline-flex cursor-pointer items-center gap-3 rounded-full bg-black py-2.5 pl-5 pr-6 text-white transition-[background-color,translate] duration-200 hover:-translate-y-0.5 hover:bg-black/80"
+            />
           </div>
         </FadeIn>
       </div>

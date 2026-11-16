@@ -30,10 +30,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Wisher",
     description: "Create a wishlist, share your link, receive gifts.",
-    url: "https://wishers.app",
+    url: "https://wishers.com.ng",
     siteName: "Wisher",
     images: [
-      { url: "https://wishers.app/og-image.png", width: 1200, height: 630 },
+      { url: "https://wishers.com.ng/og-image.png", width: 1200, height: 630 },
     ],
     locale: "en_NG",
     type: "website",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Wisher — Share Your Wishes",
     description:
       "Nigeria's gifting app. Create wishlists, share links, receive contributions.",
-    images: ["https://wishers.app/og-image.png"],
+    images: ["https://wishers.com.ng/og-image.png"],
   },
 };
 

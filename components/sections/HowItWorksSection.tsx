@@ -19,7 +19,7 @@ const STEPS = [
     body: "One tap takes it to your story, DM or group chat.",
     image: "/assets/nigeria-share.jpg",
     alt: "Two friends looking at a phone together",
-    extra: "pay.wishers.app/amaka ↗",
+    extra: "pay.wishers.com.ng/amaka ↗",
   },
   {
     step: "03 · Watch it happen",

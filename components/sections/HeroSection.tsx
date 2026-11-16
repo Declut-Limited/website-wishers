@@ -2,13 +2,7 @@ import Image from "next/image";
 import FadeIn from "@/components/motion/FadeIn";
 import Float from "@/components/motion/Float";
 import { StaggerGroup, StaggerItem } from "@/components/motion/Stagger";
-
-const ANDROID_URL =
-  process.env.NEXT_PUBLIC_ANDROID_APP_URL ||
-  "https://play.google.com/store/apps/details?id=com.wishers.app";
-const IOS_URL =
-  process.env.NEXT_PUBLIC_IOS_APP_URL ||
-  "https://apps.apple.com/app/wisher/id[APP_ID]";
+import StoreButton from "@/components/elements/StoreButton";
 
 // Social-proof avatars (initial + colour), as in the Figma frame.
 const AVATARS = [
@@ -54,31 +48,14 @@ export default function HeroSection() {
 
             {/* Store buttons */}
             <StaggerItem className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-8">
-              <a
-                href={ANDROID_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 rounded-full bg-black hover:bg-black/70 text-white pl-5 pr-6 py-2.5 transition-colors duration-200"
-              >
-                <img src="/assets/google-play.svg" alt="" width={24} height={26} className="h-6 w-auto shrink-0" />
-                <span className="text-left">
-                  <span className="block text-[10px] font-medium uppercase leading-none tracking-wide">Get it on</span>
-                  <span className="block text-lg font-semibold leading-tight">Google Play</span>
-                </span>
-              </a>
-
-              <a
-                href={IOS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 rounded-full bg-black hover:bg-black/70 text-white pl-5 pr-6 py-2.5 transition-colors duration-200"
-              >
-                <img src="/assets/apple-store.svg" alt="" width={18} height={22} className="h-6 w-auto shrink-0" />
-                <span className="text-left">
-                  <span className="block text-[10px] font-medium leading-none tracking-wide">Download on the</span>
-                  <span className="block text-lg font-semibold leading-tight">App Store</span>
-                </span>
-              </a>
+              <StoreButton
+                store="android"
+                className="inline-flex cursor-pointer items-center gap-3 rounded-full bg-black hover:bg-black/70 text-white pl-5 pr-6 py-2.5 transition-colors duration-200"
+              />
+              <StoreButton
+                store="ios"
+                className="inline-flex cursor-pointer items-center gap-3 rounded-full bg-black hover:bg-black/70 text-white pl-5 pr-6 py-2.5 transition-colors duration-200"
+              />
             </StaggerItem>
 
             {/* Social proof */}

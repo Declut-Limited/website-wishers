@@ -146,7 +146,7 @@ export default function SharingStorySection() {
             {/* on hover it straightens and pops, and the arrow nudges out */}
             <div className="mt-auto mb-4 -mx-1 flex -rotate-3 items-center justify-between gap-3 rounded-xl bg-wisher-cream px-4 py-3.5 shadow-lg shadow-black/30 transition-[rotate,scale] duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:rotate-0 group-hover:scale-105 group-[.is-playing]:rotate-0 group-[.is-playing]:scale-105">
               <span className="flex min-w-0 items-center gap-1.5 text-[11px] font-semibold text-wisher-forest">
-                <span className="truncate">pay.wishers.app/amaka</span>
+                <span className="truncate">pay.wishers.com.ng/amaka</span>
                 <span
                   aria-hidden
                   className="flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-[3px] bg-wisher-primary text-[8px] leading-none text-white transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-[.is-playing]:-translate-y-0.5 group-[.is-playing]:translate-x-0.5"

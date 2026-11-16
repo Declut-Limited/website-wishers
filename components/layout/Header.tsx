@@ -7,6 +7,7 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
+import { WEB_APP_LOGIN_URL } from "@/lib/links";
 
 const navLinks = [
   { label: "How it works", href: "#how-it-works" },
@@ -14,10 +15,6 @@ const navLinks = [
   { label: "Features", href: "#story-spread" },
   { label: "Safety", href: "#safety" },
 ];
-
-const ANDROID_URL =
-  process.env.NEXT_PUBLIC_ANDROID_APP_URL ||
-  "https://play.google.com/store/apps/details?id=com.wishers.app";
 
 export default function Header() {
   return (
@@ -58,8 +55,8 @@ export default function Header() {
             asChild
             className="bg-wisher-lime hover:bg-wisher-lime/90 text-wisher-ink text-base font-extrabold rounded-full h-12 px-7"
           >
-            <a href={ANDROID_URL} target="_blank" rel="noopener noreferrer">
-              Get Wisher
+            <a href={WEB_APP_LOGIN_URL} target="_blank" rel="noopener noreferrer">
+              Get started
             </a>
           </Button>
         </div>
@@ -93,12 +90,12 @@ export default function Header() {
                   </SheetClose>
                 ))}
                 <a
-                  href={ANDROID_URL}
+                  href={WEB_APP_LOGIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 inline-flex items-center justify-center rounded-full bg-wisher-lime text-wisher-ink font-extrabold py-3 px-6 hover:bg-wisher-lime/90 transition-colors"
                 >
-                  Get Wisher
+                  Get started
                 </a>
               </nav>
             </SheetContent>

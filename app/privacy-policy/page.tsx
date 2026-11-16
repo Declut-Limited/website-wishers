@@ -119,7 +119,7 @@ export default function PrivacyPolicyPage() {
       </ul>
       <p>
         To exercise these rights, contact us at{" "}
-        <a href="mailto:support@wishers.app">support@wishers.app</a>.
+        <a href="mailto:support@wishers.com.ng">support@wishers.com.ng</a>.
       </p>
 
       <h2>6. Cookies and Tracking</h2>
@@ -152,9 +152,9 @@ export default function PrivacyPolicyPage() {
       <ul>
         <li>
           Email:{" "}
-          <a href="mailto:support@wishers.app">support@wishers.app</a>
+          <a href="mailto:support@wishers.com.ng">support@wishers.com.ng</a>
         </li>
-        <li>Website: wishers.app</li>
+        <li>Website: wishers.com.ng</li>
       </ul>
     </LegalLayout>
   );
