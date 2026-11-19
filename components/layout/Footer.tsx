@@ -21,7 +21,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-16 sm:py-20 lg:grid-cols-[4fr_5fr_3fr_2fr]">
           <Link href="/" className="col-span-2 flex items-center gap-3 self-start lg:col-span-1">
             <img src="/favicon.svg" alt="" width={40} height={40} className="h-10 w-10" />
-            <span className="text-2xl font-bold tracking-tight text-white">Wisher</span>
+            <span className="text-2xl font-bold tracking-tight text-white">Wishers</span>
           </Link>
 
           <p className="col-span-2 text-lg font-medium leading-loose text-white/55 lg:col-span-1">
@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-4 border-t border-white/10 py-8 text-sm font-medium text-white/50 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Wisher. Made with ♡ in Nigeria.</p>
+          <p>© {new Date().getFullYear()} Wishers. Made with ♡ in Nigeria.</p>
           <a href="#" className="group inline-flex items-center gap-1 transition-colors hover:text-white">
             Back to top
             <LuArrowUp className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5" />

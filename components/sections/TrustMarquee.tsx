@@ -12,7 +12,7 @@ export default function TrustMarquee() {
   const row = [...ITEMS, ...ITEMS];
 
   return (
-    <section aria-label="Why Wisher" className="marquee overflow-hidden border-t border-white/10 bg-wisher-ink py-3.5">
+    <section aria-label="Why Wishers" className="marquee overflow-hidden border-t border-white/10 bg-wisher-ink py-3.5">
       <div className="marquee-track flex w-max">
         {[0, 1].map((copy) => (
           <ul key={copy} aria-hidden={copy === 1} className="flex shrink-0 items-center">

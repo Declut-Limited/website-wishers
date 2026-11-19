@@ -29,7 +29,7 @@ export default function Header() {
             height={44}
             className="w-11 h-11 rounded-xl"
           />
-          <span className="text-2xl font-bold tracking-tight text-white">Wisher</span>
+          <span className="text-2xl font-bold tracking-tight text-white">Wishers</span>
         </Link>
 
         {/* Desktop Nav */}

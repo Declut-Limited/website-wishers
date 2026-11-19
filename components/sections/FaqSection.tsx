@@ -7,8 +7,8 @@ import FadeIn from "@/components/motion/FadeIn";
 // "Questions, answered.": FAQ accordion, one answer open at a time (the first starts open).
 const FAQS = [
   {
-    q: "What is Wisher?",
-    a: "Wisher is a social gifting app. You create a wishlist, share its unique link, and friends or family contribute securely toward the things that matter to you.",
+    q: "What is Wishers?",
+    a: "Wishers is a social gifting app. You create a wishlist, share its unique link, and friends or family contribute securely toward the things that matter to you.",
   },
   {
     q: "Does a giver need the app?",
@@ -16,11 +16,11 @@ const FAQS = [
   },
   {
     q: "Where does the money go?",
-    a: "Every contribution goes into your Wisher wallet, where you can see who gave and what they said. When you're ready, you withdraw it to your own bank account.",
+    a: "When someone fulfils your wish, their payment is processed securely through Paystack and distributed according to the configured payment arrangement. Your contributions are not stored in a Wishers wallet, and there is no withdrawal process.",
   },
   {
     q: "Are payments secure?",
-    a: "Yes. Payments run on trusted payment infrastructure, and givers only ever see your wish, never your bank details.",
+    a: "Yes. Payments are processed through Paystack's payment infrastructure. Your bank details are not displayed to people fulfilling your wishes, and Wishers does not hold your funds in an in-app wallet or escrow account.",
   },
 ];
 

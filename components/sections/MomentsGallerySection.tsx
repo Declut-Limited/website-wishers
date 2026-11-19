@@ -4,7 +4,7 @@ import { StaggerGroup, StaggerItem } from "@/components/motion/Stagger";
 
 // "Big days. Quiet dreams.": six-photo moments gallery in three columns
 // (three stacked · one tall · short over tall).
-// Hangouts and Graduation use the final shots; the rest are stand-ins from the Live on Wisher rail
+// Hangouts and Graduation use the final shots; the rest are stand-ins from the Live on Wishers rail
 // and story assets until their photos arrive.
 type Moment = { n: string; label: string; image: string; alt: string; className: string };
 

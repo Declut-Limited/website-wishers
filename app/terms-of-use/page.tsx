@@ -1,19 +1,22 @@
 import LegalLayout from "@/components/layout/LegalLayout";
+import { getReferrerSharePercentage } from "@/lib/settings";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
   description:
-    "Read the terms and conditions governing your use of the Wisher gifting platform.",
+    "Read the terms and conditions governing your use of the Wishers gifting platform.",
 };
 
-export default function TermsOfUsePage() {
+export default async function TermsOfUsePage() {
+  const referrerShare = await getReferrerSharePercentage();
+
   return (
     <LegalLayout title="Terms of Use" lastUpdated="June 2025">
       <p>
         These Terms of Use (&ldquo;Terms&rdquo;) govern your access to and use
-        of the Wisher mobile application and website (collectively, the
-        &ldquo;Service&rdquo;) operated by Wisher (&ldquo;we&rdquo;,
+        of the Wishers mobile application and website (collectively, the
+        &ldquo;Service&rdquo;) operated by Wishers (&ldquo;we&rdquo;,
         &ldquo;our&rdquo;, or &ldquo;us&rdquo;). By creating an account or
         using the Service, you agree to be bound by these Terms.
       </p>
@@ -21,7 +24,7 @@ export default function TermsOfUsePage() {
       <h2>1. Eligibility</h2>
       <p>
         You must be at least 18 years old and a resident of Nigeria to use the
-        Service. By using Wisher, you represent and warrant that you meet these
+        Service. By using Wishers, you represent and warrant that you meet these
         requirements.
       </p>
 
@@ -50,10 +53,10 @@ export default function TermsOfUsePage() {
         <li>Impersonate another person or entity.</li>
         <li>Upload content that is unlawful, harmful, obscene, or infringes third-party rights.</li>
         <li>Use the Service to solicit funds under false pretences.</li>
-        <li>Attempt to circumvent our payment or withdrawal systems.</li>
+        <li>Attempt to circumvent our payment systems.</li>
       </ul>
 
-      <h2>4. Payments and Wallet</h2>
+      <h2>4. Payments</h2>
       <ul>
         <li>
           All payments are processed by{" "}
@@ -62,8 +65,7 @@ export default function TermsOfUsePage() {
           </a>{" "}
           and subject to their terms and fees.
         </li>
-        <li>Contributions made to wishlists are credited to the wishlist owner&apos;s Wisher wallet.</li>
-        <li>Withdrawals are transferred to the Nigerian bank account linked to your profile.</li>
+        <li>Contributions made to wishlists are paid through Paystack directly into the Nigerian bank account linked to the wishlist owner&apos;s profile.</li>
         <li>We reserve the right to apply processing fees; current fees are displayed within the app before any transaction.</li>
         <li>Contributions are non-refundable once confirmed by the contributor, except where required by Nigerian consumer protection law.</li>
       </ul>
@@ -77,15 +79,15 @@ export default function TermsOfUsePage() {
 
       <h2>6. Referral Programme</h2>
       <ul>
-        <li>You earn 1% of each withdrawal made by users you refer.</li>
-        <li>Referral earnings are credited to your Wisher wallet.</li>
+        <li>You earn {referrerShare}% of each contribution received by users you refer.</li>
+        <li>Referral earnings are paid directly into the Nigerian bank account linked to your profile.</li>
         <li>We reserve the right to modify or discontinue the referral programme at any time with reasonable notice.</li>
         <li>Fraudulent referrals will result in account termination and forfeiture of earnings.</li>
       </ul>
 
       <h2>7. Intellectual Property</h2>
       <p>
-        The Wisher name, logo, and Service content are the property of Wisher
+        The Wishers name, logo, and Service content are the property of Wishers
         and protected by applicable intellectual property laws. You may not
         copy, modify, or distribute our branding without written permission.
       </p>
@@ -101,8 +103,8 @@ export default function TermsOfUsePage() {
         We may suspend or terminate your account at any time if you violate
         these Terms, engage in fraudulent activity, or if required by law.
         Upon termination, your right to use the Service ceases immediately. Any
-        balance in your wallet at the time of termination will be processed in
-        accordance with applicable law.
+        contribution in progress at the time of termination will be processed
+        through Paystack in accordance with applicable law.
       </p>
       <p>
         You may delete your account at any time from within the app settings.
@@ -119,10 +121,10 @@ export default function TermsOfUsePage() {
 
       <h2>10. Limitation of Liability</h2>
       <p>
-        To the maximum extent permitted by Nigerian law, Wisher shall not be
+        To the maximum extent permitted by Nigerian law, Wishers shall not be
         liable for any indirect, incidental, special, or consequential damages
         arising from your use of the Service, including loss of contributions,
-        withdrawal delays caused by third-party payment providers, or
+        payout delays caused by third-party payment providers, or
         unauthorised account access resulting from your failure to secure your
         credentials.
       </p>

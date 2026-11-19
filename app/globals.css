@@ -27,7 +27,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Wisher brand colors */
+  /* Wishers brand colors */
   --color-wisher-primary: #2d6339;
   --color-wisher-primary-light: #308041;
   --color-wisher-primary-dark: #274a34;

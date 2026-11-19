@@ -78,7 +78,7 @@ export default function WishingNowSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.08em] text-wisher-forest/60">Live on Wisher</p>
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.08em] text-wisher-forest/60">Live on Wishers</p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight text-wisher-forest">
               People are wishing
               <br />

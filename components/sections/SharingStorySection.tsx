@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import FadeIn from "@/components/motion/FadeIn";
 
 // The sharing story: three tilted story cards (create → post → result) on deep forest,
-// with the places a Wisher link goes listed underneath.
+// with the places a Wishers link goes listed underneath.
 // Desktop: the three cards sit in a row and animate on hover.
 // Below lg (where they'd stack): one card at a time, playing itself like a story (1 → 2 → 3, then
 // round again) while on screen, with the hover animation running on the card that's up; a tap skips.
@@ -109,7 +109,7 @@ export default function SharingStorySection() {
           <span className="font-fraunces italic font-semibold text-wisher-lime">Watch them show up.</span>
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-sm sm:text-base font-medium leading-relaxed text-white/55">
-          This is the full journey, from your Wisher link leaving the app to your people making the wish happen.
+          This is the full journey, from your Wishers link leaving the app to your people making the wish happen.
         </p>
       </FadeIn>
 

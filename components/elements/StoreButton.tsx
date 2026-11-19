@@ -39,7 +39,7 @@ export default function StoreButton({ store, className }: { store: keyof typeof 
           <img src="/favicon.svg" alt="" width={56} height={56} className="mx-auto mb-5 h-14 w-14 rounded-2xl" />
           <Dialog.Title className="text-2xl font-bold tracking-tight text-wisher-ink">Coming soon</Dialog.Title>
           <Dialog.Description className="mt-3 text-base leading-relaxed text-neutral-600">
-            Wisher is on its way to {s.name}. In the meantime, you can make your wishlist on the web.
+            Wishers is on its way to {s.name}. In the meantime, you can make your wishlist on the web.
           </Dialog.Description>
 
           <a

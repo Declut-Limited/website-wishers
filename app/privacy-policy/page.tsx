@@ -4,18 +4,18 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Learn how Wisher collects, uses, and protects your personal information.",
+    "Learn how Wishers collects, uses, and protects your personal information.",
 };
 
 export default function PrivacyPolicyPage() {
   return (
     <LegalLayout title="Privacy Policy" lastUpdated="June 2025">
       <p>
-        Welcome to Wisher (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or
+        Welcome to Wishers (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or
         &ldquo;us&rdquo;). We are committed to protecting your personal
         information and your right to privacy. This Privacy Policy explains how
         we collect, use, disclose, and safeguard your information when you use
-        the Wisher mobile application and website (collectively, the
+        the Wishers mobile application and website (collectively, the
         &ldquo;Service&rdquo;).
       </p>
       <p>
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
       <ul>
         <li>Account registration details (name, email address, phone number)</li>
         <li>Profile information and wishlist content (titles, descriptions, images)</li>
-        <li>Bank account details for withdrawal purposes</li>
+        <li>Bank account details, so Paystack can pay contributions into your account</li>
         <li>Communications you send us</li>
       </ul>
 
@@ -60,10 +60,10 @@ export default function PrivacyPolicyPage() {
       <h2>2. How We Use Your Information</h2>
       <p>We use the information we collect to:</p>
       <ul>
-        <li>Create and manage your Wisher account</li>
-        <li>Process wishlist contributions and wallet withdrawals</li>
+        <li>Create and manage your Wishers account</li>
+        <li>Process wishlist contributions through Paystack into your bank account</li>
         <li>Display your wishlists to contributors you share links with</li>
-        <li>Send transactional notifications (contributions received, withdrawal status)</li>
+        <li>Send transactional notifications (contributions received, payment status)</li>
         <li>Operate the Boost feature to feature your wishlist publicly</li>
         <li>Calculate and distribute referral earnings</li>
         <li>Improve and personalise the Service</li>
@@ -76,10 +76,7 @@ export default function PrivacyPolicyPage() {
       </p>
       <ul>
         <li>
-          <strong>Paystack</strong> — to process payments and withdrawals
-        </li>
-        <li>
-          <strong>Firebase / Google Cloud</strong> — for database and infrastructure services
+          <strong>Paystack</strong> — to process payments and pay contributions into your bank account
         </li>
         <li>
           <strong>Cloudinary</strong> — to store and serve wishlist images
@@ -124,7 +121,7 @@ export default function PrivacyPolicyPage() {
 
       <h2>6. Cookies and Tracking</h2>
       <p>
-        The Wisher website uses essential cookies to maintain session state and
+        The Wishers website uses essential cookies to maintain session state and
         remember your theme preference. We do not use advertising trackers or
         sell browsing data to third parties.
       </p>
