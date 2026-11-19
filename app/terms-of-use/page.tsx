@@ -2,7 +2,7 @@ import LegalLayout from "@/components/layout/LegalLayout";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — Wisher",
+  title: "Terms of Use",
   description:
     "Read the terms and conditions governing your use of the Wisher gifting platform.",
 };

@@ -24,26 +24,31 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Wisher — Share Your Wishes, Receive the Gifts You Love",
+  metadataBase: new URL("https://wishers.com.ng"),
+  title: {
+    default: "Wishers — Share Your Wishes, Receive the Gifts You Love",
+    template: "%s — Wishers",
+  },
   description:
     "Create a wishlist, share your unique link, and let friends contribute via Paystack. Nigeria's #1 gifting app.",
+  applicationName: "Wishers",
+  // Each page points Google at its one wishers.com.ng address.
+  alternates: { canonical: "./" },
   openGraph: {
-    title: "Wisher",
+    title: "Wishers",
     description: "Create a wishlist, share your link, receive gifts.",
     url: "https://wishers.com.ng",
-    siteName: "Wisher",
-    images: [
-      { url: "https://wishers.com.ng/og-image.png", width: 1200, height: 630 },
-    ],
+    siteName: "Wishers",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     locale: "en_NG",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wisher — Share Your Wishes",
+    title: "Wishers — Share Your Wishes",
     description:
       "Nigeria's gifting app. Create wishlists, share links, receive contributions.",
-    images: ["https://wishers.com.ng/og-image.png"],
+    images: ["/og-image.png"],
   },
 };
 

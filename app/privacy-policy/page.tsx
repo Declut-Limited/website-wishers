@@ -2,7 +2,7 @@ import LegalLayout from "@/components/layout/LegalLayout";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Wisher",
+  title: "Privacy Policy",
   description:
     "Learn how Wisher collects, uses, and protects your personal information.",
 };
