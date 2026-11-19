@@ -12,7 +12,7 @@ export default async function TermsOfUsePage() {
   const referrerShare = await getReferrerSharePercentage();
 
   return (
-    <LegalLayout title="Terms of Use" lastUpdated="June 2025">
+    <LegalLayout title="Terms of Use" lastUpdated="October 2026">
       <p>
         These Terms of Use (&ldquo;Terms&rdquo;) govern your access to and use
         of the Wishers mobile application and website (collectively, the
@@ -82,7 +82,7 @@ export default async function TermsOfUsePage() {
         <li>You earn {referrerShare}% of each contribution received by users you refer.</li>
         <li>Referral earnings are paid directly into the Nigerian bank account linked to your profile.</li>
         <li>We reserve the right to modify or discontinue the referral programme at any time with reasonable notice.</li>
-        <li>Fraudulent referrals will result in account termination and forfeiture of earnings.</li>
+        <li>Fraudulent referrals will result in account termination and forfeiture of future earnings.</li>
       </ul>
 
       <h2>7. Intellectual Property</h2>

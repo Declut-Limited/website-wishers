@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <LegalLayout title="Privacy Policy" lastUpdated="June 2025">
+    <LegalLayout title="Privacy Policy" lastUpdated="October 2026">
       <p>
         Welcome to Wishers (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or
         &ldquo;us&rdquo;). We are committed to protecting your personal
@@ -128,8 +128,8 @@ export default function PrivacyPolicyPage() {
 
       <h2>7. Children&apos;s Privacy</h2>
       <p>
-        The Service is not directed to children under 13. We do not knowingly
-        collect personal information from children under 13. If you believe we
+        The Service is not directed to anyone under 18. We do not knowingly
+        collect personal information from anyone under 18. If you believe we
         have collected such information, please contact us immediately.
       </p>
 
